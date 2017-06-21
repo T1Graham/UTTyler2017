@@ -8,7 +8,7 @@ import random
 ####
 
 team_name = 'Pikachu' # Only 10 chars displayed.
-strategy_name = 'Wild Guessing'
+strategy_name = 'Poke Hunting'
 strategy_description = 'No Strategy'
     
 def move(my_history, their_history, my_score, their_score):
