@@ -5,10 +5,12 @@
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
 ####
-
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+import random
+team_name = 'Aktas' # Only 10 chars displayed.
+strategy_name = 'Random if not betrayed'
+strategy_description = '''\
+Always set at %50 probability
+if the opponent not betrayed before'''
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -25,8 +27,12 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
+    choices='bc'
+    if their_score>-70 or 'b' in their_history:
+        return 'b'
+    else:
+        return random.choice(choices)
+   
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
@@ -35,7 +41,7 @@ def test_move(my_history, their_history, my_score, their_score, result):
     Returns True or False, dpending on whether result was as expected.
     '''
     real_result = move(my_history, their_history, my_score, their_score)
-    if real_result == result:
+    if real_result == result or 'b' in their_history:
         return True
     else:
         print("move(" +
