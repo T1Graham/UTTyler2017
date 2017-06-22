@@ -1,3 +1,4 @@
+import random
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -6,7 +7,7 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
+team_name = 'Freedom!' # Only 10 chars displayed.
 strategy_name = 'The name the team gives to this strategy'
 strategy_description = 'How does this strategy decide?'
     
@@ -25,8 +26,36 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
+
+    """count = 0
+    collude = 0
+    betray = 0
+    while count < 10:
+        return "c"
+    for x in their_history:
+        if x == "c":
+            collude +=1
+        else:
+            betray +=1
+    if betray>collude:
+        return "b"
+    else:
+        return random.choice["c","c","c","c","b"]"""
     
-    return 'c'
+    count = 0
+    collude = 0
+    betray = 0
+    while count < 10:
+        return "c"
+    for x in their_history:
+        if x == "c":
+            collude +=1
+        else:
+            betray +=1
+    if betray>collude:
+        return "b"
+    else:
+        return random.choice["c","c","c","b"]
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
