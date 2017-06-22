@@ -18,13 +18,13 @@ def move(my_history, their_history, my_score, their_score):
     Returns 'c' or 'b'. 
     '''
     if len(my_history)==0: # It's the first round: collude
-        return 'b'           
+        return 'c'           
     else:
         recent_round_them = their_history[-1]
-        if recent_round_them == 'b':
-            return 'c'
-        else:
+        if recent_round_them == 'c':
             return 'b'
+        else:
+            return 'c'
             
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
