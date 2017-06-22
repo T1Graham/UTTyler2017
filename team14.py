@@ -28,6 +28,10 @@ def move(my_history, their_history, my_score, their_score):
     
     if 'c' in their_history and 'c' in my_history:
         return 'c'
+    elif len(their_history) > 50 and 'b' in their_history and 'c' in my_history:
+        return 'c'
+    elif len(their_history) > 50 and 'c' in their_history and 'c' in my_history:
+        return 'c'
     else:
         return 'b'
 

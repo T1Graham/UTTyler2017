@@ -26,7 +26,7 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    if 'b' in their_history and 'c' in my_history:
+    if 'b' in their_history and their_history > 50 and 'c' in my_history:
         return 'c'
     else:
         return 'b'
