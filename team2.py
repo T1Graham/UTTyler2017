@@ -28,11 +28,12 @@ def move(my_history, their_history, my_score, their_score):
     
     #mY STRATEGY IS HERE 
 
-
+    if len(my_history) == 0:
+        return 'b'
     if my_history[-1]=='c' and their_history[-1]=='b':
         return 'b'
-    if my_history[1] == 'b' and their_history[1] == 'c':
-           return 'c'        
+    '''if my_history[1] == 'b' and their_history[1] == 'c':
+           return 'c' '''       
     
     if 'b' in their_history:
             return 'b'

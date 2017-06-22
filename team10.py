@@ -19,7 +19,7 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'.''' 
     
-    their, my = []
+    their, my = ([],[])
     c = 'c'
     b = 'b'
         
@@ -37,7 +37,7 @@ def move(my_history, their_history, my_score, their_score):
     else:    
         return 'b'  
     
-    their, my = []            
+    their, my = ([],[])            
                                         
     for b in their_history: #check number of 'b' letter in their_history
         if b==their_history:
