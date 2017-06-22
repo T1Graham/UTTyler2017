@@ -7,7 +7,7 @@ import random
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'Scofield' # Only 10 chars displayed.
+team_name = 'Scofield part 2' # Only 10 chars displayed.
 strategy_name = 'Random with lead protection'
 strategy_description = 'Starts with 20 random events, then checks position.  If leading, preserves lead with all betrayl.  If losing, checks opponents previous behavior and makes a prediction.'
     
