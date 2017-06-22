@@ -34,9 +34,11 @@ def move(my_history, their_history, my_score, their_score):
             else:
                 b += 1
         if c > b:
-            if their_history[-2]=='b':
+            if their_history[-2]=='b' and their_history[-1]=='b':
+                return 'b'
+            elif their_history[-2]=='b' and their_history[-1]=='c':
                 return 'b'
             else:
                 return 'c'
         else:
-            return 'c'
+            return random.choice(['b','c'])
