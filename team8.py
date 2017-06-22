@@ -6,9 +6,9 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = 'Achilles' # Only 10 chars displayed.
+strategy_name = 'Olive branch with a defensive stick'
+strategy_description = 'Collude while opponents betrayal rate is under 20%, check every 5 rounds'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -17,6 +17,27 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
+
+    if len(my_history) < 5:
+        return 'c'
+    else:
+        betrayals = 0
+        collusions = 0
+        total = 0
+        betray_percent = 0
+        for x in their_history:
+            if x == 'b':
+                betrayals +=1
+                total +=1
+            else:
+                collusions +=1
+                total +=1
+        betray_percent = float(betrayals / total)
+        if betray_percent > 0.10:
+            return 'b'
+        else:
+            return 'c' 
+            
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
