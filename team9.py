@@ -25,7 +25,12 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
+<<<<<<< HEAD
     if len(their_history) < 5:
+=======
+    
+    if len(their_history) < 6:
+>>>>>>> efe66f422deeb6fcf81319ce1eee1ff2220d73d0
         return 'b'
     if their_history[5] == my_history[5]:
         

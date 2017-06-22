@@ -6,18 +6,55 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
-    
+team_name = 'ErkanTeacher' # Only 10 chars displayed.
+strategy_name = 'Check the big one'
+strategy_description = '''checks the number of the b and c in both history
+if number of b in my_history is larger than or equal to their_history returns b else c
+if number of c in my_history is larger than or equal to their_history returns c else b
+'''
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
     Make my move.
-    Returns 'c' or 'b'. 
-    '''
-
+    Returns 'c' or 'b'.''' 
+    
+    their, my = ([],[])
+    c = 'c'
+    b = 'b'
+        
+    for c in their_history: #check number of 'c' letter in their_history
+        if c==their_history:
+            their.append(1)
+        if c==my_history:
+            my.append(1)
+    
+    if sum(my)>sum(their):
+        return 'c'
+        
+    if sum(their)>sum(my):
+        return 'b'
+    else:    
+        return 'b'  
+    
+    their, my = ([],[])            
+                                        
+    for b in their_history: #check number of 'b' letter in their_history
+        if b==their_history:
+            their.append(1)
+        if b==my_history:
+            my.append(1)
+    
+    if sum(my)>sum(their):
+        return 'b'
+        
+    if sum(their)>sum(my):
+        return 'c'
+    else:    
+        return 'c' 
+        
+    return 'c'     
+     
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
     # The first round between these two players is my_history[0] and their_history[0].

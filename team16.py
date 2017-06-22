@@ -7,7 +7,7 @@
 ####
 
 team_name = 'Arrow' # Only 10 chars displayed.
-strategy_name = 'No one wins'
+strategy_name = 'I Lose'
 strategy_description = ''
     
 def move(my_history, their_history, my_score, their_score):
